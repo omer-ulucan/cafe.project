@@ -1,0 +1,9 @@
+Abstract\BaseCustomerManager.class
+Concrete\NeroCustomerManager.class
+Abstract\ICustomerCheckService.class
+Adapters\MernisServiceAdapter.class
+Abstract\ICustomerService.class
+Concrete\StarbucksCustomerManager.class
+Concrete\CustomerCheckManager.class
+Abstract\IEntity.class
+Entities\Customer.class
