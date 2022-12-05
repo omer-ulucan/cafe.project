@@ -11,7 +11,11 @@ public class Customer implements IEntity {
     public String lastName;
     public LocalDate dateOfBirth;
     public String nationalityId;
+    public int id;
 
+    public Customer(int id){
+        this.id=id;
+    }
     public Customer(String firstName, String lastName, LocalDate dateOfBirth, String nationalityId) {
         this.firstName = firstName;
         this.lastName = lastName;

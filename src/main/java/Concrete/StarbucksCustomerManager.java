@@ -2,26 +2,24 @@ package Concrete;
 
 import Abstract.BaseCustomerManager;
 import Abstract.ICustomerCheckService;
-import Abstract.ICustomerService;
 import Entities.Customer;
-
 
 public class StarbucksCustomerManager extends BaseCustomerManager {
 
-    private ICustomerCheckService customerCheckService;
+    ICustomerCheckService _customerCheckService;
 
-    public StarbucksCustomerManager(ICustomerService customerService){
-        this.customerCheckService=customerCheckService;
+    public StarbucksCustomerManager(ICustomerCheckService customerCheckService) {
+        _customerCheckService = customerCheckService;
     }
 
-    public void Save(Customer customer){
-        if (customerCheckService.CheckIfRealPerson(customer)){
+    @Override
+    public void Save(Customer customer) throws Exception {
+        if (_customerCheckService.CheckIfRealPerson(customer)){
             super.Save(customer);
+        } else {
+            throw new Exception("Not a valid person");
         }
-        else {
-            System.out.println("not a valid person");
-        }
+
     }
+
 }
-
-
